@@ -5,7 +5,7 @@ import mysql.connector
 from datetime import datetime
 import time
 import matplotlib.pyplot as plt
-
+port = int(os.environ.get('PORT', 5000))
 app = Flask(__name__)
 
 # Generar una clave de encriptación
@@ -246,4 +246,4 @@ def result():
     return render_template('result.html')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', debug=True, port=port)
