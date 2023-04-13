@@ -21,7 +21,7 @@ fernet_desencriptar = Fernet(desencriptar_key)
 
 # Configurar la conexión a la base de datos MySQL
 mydb = mysql.connector.connect(
-  host="localhost",
+  host="200.63.40.219",
   user="root",
   password="12345",
   database="mydb"
