@@ -66,7 +66,7 @@ def encrypt():
     end_time = time.time()
     tiempo_cifrado = end_time - start_time
 
-    with open('archivos_encriptados/' + nombre_archivo + '.enc', 'wb') as f:
+    with open('/archivos_encriptados/' + nombre_archivo + '.enc', 'wb') as f:
         f.write(archivo_encriptado)
 
     fecha_hora = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -88,7 +88,7 @@ def decrypt():
     end_time = time.time()
     tiempo = end_time - start_time
 
-    with open('archivos_desencriptados/' + nombre_archivo, 'wb') as f:
+    with open('/archivos_desencriptados/' + nombre_archivo, 'wb') as f:
         f.write(archivo_desencriptado)
     fecha_hora = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     mycursor.execute("INSERT INTO historialdesen (nombre_archivo, fecha_hora, accion, tiempo) VALUES (%s, %s, %s, %s)", (nombre_archivo, fecha_hora, "Decrypt", tiempo))
