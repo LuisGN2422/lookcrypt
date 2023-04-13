@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Iniciar Sesion</title>
+    <style>
+      body {
+        background-color: black;
+        color: white;
+        font-family: Arial, sans-serif;
+      }
+
+      h1 {
+        color: green;
+        text-align: center;
+        font-size: 2em;
+      }
+
+      form {
+        margin: 0 auto;
+        max-width: 400px;
+      }
+
+      input[type="text"],
+      input[type="password"],
+      input[type="submit"] {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #2c3e50;
+        color: white;
+        font-size: 1em;
+      }
+
+      input[type="submit"] {
+        background-color: #3498db;
+        cursor: pointer;
+      }
+
+      a {
+        display: block;
+        text-align: center;
+        color: #3498db;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.2em;
+      }
+
+      a:hover {
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Iniciar Sesion</h1>
+    <form method="POST" action="/login">
+      <input type="text" name="email" placeholder="Email">
+      <input type="password" name="password" placeholder="Contrasena">
+      <input type="submit" value="Iniciar Sesion">
+    </form>
+    <br>
+    <a href="/register">Registrarse</a>
+  </body>
+</html>
+

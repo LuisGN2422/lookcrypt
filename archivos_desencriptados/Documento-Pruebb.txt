@@ -1,0 +1,12 @@
+enable secret cisco
+username cisco privilege 15 secret cisco
+line vty 0 4
+password cisco
+login
+exit
+line console 0
+login
+local
+banner motd #Prohibido el ingreso#
+
+Pruebaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa

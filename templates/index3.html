@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registrar Usuario</title>
+    <style>
+        body {
+            background-color: #3B3B3B;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            color: #00FF00;
+            font-size: 40px;
+            margin-top: 50px;
+        }
+
+        input[type=text], input[type=password], input[type=email], input[type=submit] {
+            background-color: #000;
+            border: none;
+            color: #fff;
+            font-size: 20px;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        input[type=submit] {
+            background-color: #00BFFF;
+            border: none;
+            color: #fff;
+            font-size: 20px;
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Registrar Usuario</h1>
+    <form method="POST" action="/register">
+        <input type="text" name="username" placeholder="Usuario">
+        <br>
+        <input type="password" name="password" placeholder="Contrasena">
+        <br>
+        <input type="email" name="email" placeholder="Correo electronico">
+        <br>
+        <input type="submit" value="Registrarse">
+    </form>
+</body>
+</html>
+

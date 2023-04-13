@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Historial de la Aplicación Web</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+    }
+    h1 {
+      text-align: center;
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+    p {
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+    table {
+      margin-left: auto;
+      margin-right: auto;
+      border-collapse: collapse;
+      border: 2px solid #ddd;
+      width: 80%;
+    }
+    th, td {
+      text-align: center;
+      padding: 12px;
+    }
+    th {
+      background-color: #4CAF50;
+      color: white;
+    }
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+    tr:hover {
+      background-color: #ddd;
+    }
+    form {
+      display: flex;
+      justify-content: center;
+      margin-top: 50px;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>El historial de la aplicación es el siguiente:</h1>
+  <p>En esta pagina podras ver el movimiento que hubo en la aplicación</p>
+  <p>Donde veras:</p>
+  <p>1.- Informacion de los archivos que han sido encryptados y desencryptados</p>
+  <p>2.- Informacion hacerca de las URLS que han sido encryptados y desencryptados</p>
+  <p>2.- Los usuarios de la aplicación</p>
+  <h2>Archivos encriptados:</h2>
+  <table>
+    <tr>
+      <th>Nombre del archivo</th>
+      <th>Fecha y hora</th>
+      <th>Acción</th>
+    </tr>
+    {% for row in rows_en %}
+    <tr>
+      <td>{{ row[1] }}</td>
+      <td>{{ row[2] }}</td>
+      <td>{{ row[3] }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  <h2>Archivos desencriptados:</h2>
+  <table>
+    <tr>
+      <th>Nombre del archivo</th>
+      <th>Fecha y hora</th>
+      <th>Acción</th>
+    </tr>
+    {% for row in rows_des %}
+    <tr>
+      <td>{{ row[1] }}</td>
+      <td>{{ row[2] }}</td>
+      <td>{{ row[3] }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+
+<h2>Informacion acerca de las URLS:</h2>
+    <table>
+        <tr>
+            <th>url_Encriptada</th>
+            <th>url_Desencriptada </th>
+            <th>Fecha_Hora</th>
+        </tr>
+        {% for row in rows_urls %}
+        <tr>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}</td>
+            <td>{{ row[3] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+      <h2>Cantidad de Archivos Encriptados:</h2>
+    <table>
+        <tr>
+            <th>Acción</th>
+        </tr>
+        {% for row in num_archivos_encriptados %}
+        <tr>
+            <td>{{ num_archivos_encriptados }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+      <h2>Cantidad de Archivos Desencriptados:</h2>
+    <table>
+        <tr>
+            <th>Acción</th>
+        </tr>
+        {% for row in num_desencriptados %}
+        <tr>
+            <td>{{ num_desencriptados }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+   <h2>Cantidad de URLS encriptadas:</h2>
+    <table>
+        <tr>
+            <th>Acción</th>
+        </tr>
+        {% for row in num_urls_encriptadas %}
+        <tr>
+            <td>{{ num_urls_encriptadas }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+  <h2>Cantidad de URLS desencriptadas:</h2>
+    <table>
+        <tr>
+            <th>Acción</th>
+        </tr>
+        {% for row in num_urls_desencriptadas %}
+        <tr>
+            <td>{{ num_urls_desencriptadas }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+     <h2>Usuarios de la aplicación:</h2>
+    <table>
+        <tr>
+            <th>Nombre</th>
+            <th>Contraseña</th>
+            <th>Correo</th>
+        </tr>
+        {% for row in rows_users %}
+        <tr>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}</td>
+            <td>{{ row[3] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+  <h2>Grafica de Información:</h2>
+    <table>
+         <tr>
+            <th>Grafica</th>
+         </tr>
+        <tr>
+            <td></td>
+             <br>
+             <br>
+      <td>  <br> <img src="./static/graficas.png"> </td>
+        </tr>
+    </table>
+<div>
+    <form action="/" metod="post">
+        <button class="/" type="submit">Salir</button>
+    </form>
+</div>
+</body>
+</html>
+
